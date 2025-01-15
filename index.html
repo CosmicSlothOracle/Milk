@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Audio Player</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Background Video with Audio Visualization</title>
+    <link rel="stylesheet" href="Milch/styles/style.css">
 </head>
 <body>
     <div class="fullscreen-bg">
-        <video playsinline autoplay muted loop class="fullscreen-bg__video">
-            <source src="assets/Milch.mp4" type="video/mp4">
+        <video id="bgVideo" playsinline autoplay muted loop class="fullscreen-bg__video">
+            <!-- Update the src attribute with your Storj video link when available -->
+            <source src="https://link.storjshare.io/s/ju3ecpwqh6cqeca4x24ukpim66rq/music/ab1233a6-f72f-4968-859f-a3c0bd0713bd.mp4?download=1" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <audio controls class="audio-player" autoplay loop>
-        <source src="assets/Milch.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+    <div class="audio-controls">
+        <button onclick="togglePlay()">Play/Pause</button>
+    </div>
+
+    <canvas id="audioVisualizer"></canvas>
+
+    <script src="Milch/scripts/script.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
-body,
-html {
+body, html {
     height: 100%;
     margin: 0;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .fullscreen-bg {
@@ -11,28 +11,33 @@ html {
     bottom: 0;
     left: 0;
     overflow: hidden;
-    z-index: -100;
+    z-index: -1; /* Keep video background behind content */
 }
 
-.fullscreen-bg__image {
+.fullscreen-bg__video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure video covers the whole screen */
 }
 
-.audio-player {
+.audio-controls {
     position: fixed;
-    bottom: 10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 600px;
-    opacity: 0.7;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0.8; /* Slight transparency */
 }
 
-.audio-player:hover {
-    opacity: 1;
+canvas#audioVisualizer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for visualization */
 }
